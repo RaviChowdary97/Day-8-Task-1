@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>GitHub Layout</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -11,104 +11,123 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script
-      src="https://kit.fontawesome.com/edeab2d47d.js"
-      crossorigin="anonymous"
-    ></script>
     <style>
-      body {
-        background-color: #cad2c5;
-      }
-      h1 {
-        display: inline;
-        padding-left: 450px;
-      }
-      div {
-        background-color: #2f3d46;
-        padding: 13px;
-        margin-top: 10px;
-      }
-      .fa-brands {
-        padding-bottom: 35px;
-      }
-      .first-div {
-        background-color: #353535;
-        margin-left: 25px;
-        border-radius: 10px;
-        width: 160px;
-        height: 400px;
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #e0e0e0;
       }
 
-      .second-div {
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+        background-color: #f5f5f5;
+      }
+
+      .header {
+        background-color: #2f3d46;
+        color: white;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .layout {
+        display: flex;
+        width: 100%;
+        padding: 20px;
+      }
+
+      .card {
         background-color: #353535;
-        width: 500px;
-        height: 7px;
+        margin: 10px;
+      }
+
+      .card.large {
+        width: 20%;
+        height: 400px;
         border-radius: 10px;
-        margin-left: 350px;
-        margin-bottom: 70px;
       }
-      .second-div::after {
-        position: relative;
-        content: "Search";
-        bottom: 5px;
-        color: gray;
+
+      .right-section {
+        width: 75%;
+        display: flex;
+        flex-direction: column;
       }
-      .third-div,
-      .fourth-div,
-      .fifth-div {
-        display: inline;
-      }
-      .third-div {
+
+      .search-card {
         background-color: #353535;
+        padding: 10px;
+        text-align: center;
+        color: white;
         border-radius: 10px;
-        margin-left: 300px;
-        width: 100px;
-        height: 90px;
-        padding: 50px 55px;
+        margin: 20px;
       }
-      .fourth-div {
-        background-color: #353535;
-        border-radius: 10px;
-        padding: 50px 55px;
-        width: 100px;
-        height: 90px;
-        margin-left: 150px;
+
+      .small-cards {
+        display: flex;
+        justify-content: space-between;
       }
-      .fifth-div {
-        background-color: #353535;
+
+      .card.small {
+        width: 32%;
+        height: 150px;
         border-radius: 10px;
-        padding: 50px 55px;
-        width: 100px;
-        height: 90px;
-        margin-left: 150px;
       }
-      .sixth-div {
+
+      .card.wide {
         background-color: #353535;
+        height: 100px;
+        margin-top: 40px;
         border-radius: 10px;
-        margin-top: 115px;
-        margin-left: 280px;
-        width: 657px;
-        height: 90px;
+      }
+
+      @media (max-width: 200px) {
+        .card.large,
+        .right-section {
+          width: 100%;
+        }
+
+        .small-cards {
+          flex-direction: column;
+        }
+
+        .card.small {
+          width: 100%;
+          margin-top: 10px;
+        }
+
+        .card.wide {
+          margin-top: 10px;
+        }
       }
     </style>
   </head>
   <body>
-    <div>
-      <i class="fa-brands fa-github fa-2xl"></i>
-      <h1>GITHUB</h1>
-    </div>
-    <br />
-    <br />
-    <div class="first-div">
-      <ul id="order" type="none">
-        <li><div class="second-div"></div></li>
-        <li class="listitems">
-          <div class="third-div"></div>
-          <div class="fourth-div"></div>
-          <div class="fifth-div"></div>
-        </li>
-        <li><div class="sixth-div"></div></li>
-      </ul>
+    <div class="container">
+      <header class="header">
+        <i class="fa-brands fa-github fa-2xl"></i>
+        <h1>GITHUB</h1>
+      </header>
+      <div class="layout">
+        <div class="card large"></div>
+        <div class="right-section">
+          <div class="search-card">Search</div>
+          <div class="small-cards">
+            <div class="card small"></div>
+            <div class="card small"></div>
+            <div class="card small"></div>
+          </div>
+          <div class="card wide"></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
